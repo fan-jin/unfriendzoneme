@@ -1,8 +1,7 @@
 module.exports = {
-    entry: './main.js',
+    entry: './app/components/Main.js',
     output: {
-        path: './',
-        filename: 'index.js'
+        filename: 'public/bundle.js'
     },
     devServer: {
         inline: true,
@@ -12,7 +11,7 @@ module.exports = {
         loaders: [
         {
             test: /\.js$/,
-            exclude: /node_modules/,
+            exclude: /(node_modules|bower_components)/,
             loader: 'babel',
             query: {
                 presets: ['es2015', 'react']

@@ -1,9 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import Main from './Main';
 
-class App extends React.Component {
-    render() {
-        return <div>This is unfriendzone.me</div>;
-    }
-}
-
-export default App;
+ReactDOM.render(<Main />, document.getElementById("app"));

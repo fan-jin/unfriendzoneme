@@ -54,13 +54,13 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _App = __webpack_require__(168);
+	var _Main = __webpack_require__(168);
 
-	var _App2 = _interopRequireDefault(_App);
+	var _Main2 = _interopRequireDefault(_Main);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById("app"));
+	_reactDom2.default.render(_react2.default.createElement(_Main2.default, null), document.getElementById("app"));
 
 /***/ },
 /* 1 */
@@ -20334,7 +20334,7 @@
 /* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -20354,30 +20354,30 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var App = function (_React$Component) {
-	    _inherits(App, _React$Component);
+	var Main = function (_React$Component) {
+	    _inherits(Main, _React$Component);
 
-	    function App() {
-	        _classCallCheck(this, App);
+	    function Main() {
+	        _classCallCheck(this, Main);
 
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Main).apply(this, arguments));
 	    }
 
-	    _createClass(App, [{
-	        key: 'render',
+	    _createClass(Main, [{
+	        key: "render",
 	        value: function render() {
 	            return _react2.default.createElement(
-	                'div',
-	                null,
-	                'This is unfriendzone.me'
+	                "h2",
+	                { className: "text-center" },
+	                "You got friendzoned? No Problem."
 	            );
 	        }
 	    }]);
 
-	    return App;
+	    return Main;
 	}(_react2.default.Component);
 
-	exports.default = App;
+	exports.default = Main;
 
 /***/ }
 /******/ ]);

@@ -38,3 +38,7 @@ textarea {
   background: transparent;
   overflow: hidden;
 }
+
+#filler {
+  height: 30vh;
+}

@@ -20445,7 +20445,7 @@
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'form-group text-center' },
+	          { className: 'form-group text-right' },
 	          _react2.default.createElement(
 	            'button',
 	            { className: 'btn btn-default', type: 'submit' },

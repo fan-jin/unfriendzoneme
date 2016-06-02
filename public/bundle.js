@@ -20372,7 +20372,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: 'col-md-8 col-md-offset-2 row' },
 	        _react2.default.createElement(
 	          'h2',
 	          { className: 'text-center' },
@@ -20418,13 +20418,34 @@
 	  function Form() {
 	    _classCallCheck(this, Form);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Form).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Form).call(this));
+
+	    _this.update = _this.update.bind(_this);
+	    _this.state = { value: "" };
+	    return _this;
 	  }
 
 	  _createClass(Form, [{
+	    key: "update",
+	    value: function update(e) {
+	      this.setState({ value: e.target.value });
+	    }
+	  }, {
 	    key: "render",
 	    value: function render() {
-	      return _react2.default.createElement("input", { type: "text" });
+	      return _react2.default.createElement(
+	        "form",
+	        null,
+	        _react2.default.createElement("textarea", { type: "text",
+	          rows: "4",
+	          cols: "50",
+	          placeholder: "Tell me your story...",
+	          value: this.state.value,
+	          onChange: this.update,
+	          required: true,
+	          autofocus: true }),
+	        _react2.default.createElement("input", { type: "submit" })
+	      );
 	    }
 	  }]);
 

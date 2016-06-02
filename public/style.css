@@ -110,3 +110,10 @@ textarea {
   color: white;
   background: transparent;
 }
+
+input[type="email"] {
+  height: 30px;
+  width: 200px;
+  color: white;
+  background: transparent;
+}

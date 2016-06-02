@@ -60,7 +60,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_reactDom2.default.render(_react2.default.createElement(_Main2.default, null), document.getElementById("app"));
+	_reactDom2.default.render(_react2.default.createElement(_Main2.default, null), document.getElementById("story-form"));
 
 /***/ },
 /* 1 */
@@ -20337,7 +20337,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -20359,31 +20359,22 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Main = function (_React$Component) {
-	  _inherits(Main, _React$Component);
+	    _inherits(Main, _React$Component);
 
-	  function Main() {
-	    _classCallCheck(this, Main);
+	    function Main() {
+	        _classCallCheck(this, Main);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Main).apply(this, arguments));
-	  }
-
-	  _createClass(Main, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'col-md-8 col-md-offset-2 row' },
-	        _react2.default.createElement(
-	          'h2',
-	          { className: 'text-center' },
-	          'You got friendzoned? No Problem.'
-	        ),
-	        _react2.default.createElement(_Form2.default, null)
-	      );
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Main).apply(this, arguments));
 	    }
-	  }]);
 
-	  return Main;
+	    _createClass(Main, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(_Form2.default, null);
+	        }
+	    }]);
+
+	    return Main;
 	}(_react2.default.Component);
 
 	exports.default = Main;
@@ -20438,17 +20429,29 @@
 	      return _react2.default.createElement(
 	        'form',
 	        { onSubmit: this.submit.bind(this) },
-	        _react2.default.createElement('textarea', {
-	          name: 'msg',
-	          type: 'text',
-	          rows: '4',
-	          cols: '50',
-	          placeholder: 'Tell me your story...',
-	          value: this.state.value,
-	          onChange: this.update,
-	          required: true,
-	          autofocus: true }),
-	        _react2.default.createElement('input', { type: 'submit' })
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'form-group' },
+	          _react2.default.createElement('textarea', {
+	            name: 'msg',
+	            type: 'text',
+	            rows: '4',
+	            cols: '50',
+	            placeholder: 'Tell me your story...',
+	            value: this.state.value,
+	            onChange: this.update,
+	            required: true,
+	            autofocus: true })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'form-group' },
+	          _react2.default.createElement(
+	            'button',
+	            { type: 'submit' },
+	            'Submit'
+	          )
+	        )
 	      );
 	    }
 	  }, {

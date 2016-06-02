@@ -31,6 +31,7 @@ class Form extends React.Component {
     e.preventDefault();
     var msg = this.state.value;
     helpers.sendMsg(msg);
+    this.setState({value: ""});
   }
 }
 

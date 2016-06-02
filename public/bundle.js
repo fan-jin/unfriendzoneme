@@ -20457,6 +20457,7 @@
 	      e.preventDefault();
 	      var msg = this.state.value;
 	      helpers.sendMsg(msg);
+	      this.setState({ value: "" });
 	    }
 	  }]);
 

@@ -6,10 +6,10 @@ var helpers = {
       msg: message
     })
     .then(function (response) {
-      console.log(response);
+      console.log("success");
     })
     .catch(function (response) {
-      console.log(response);
+      // console.log("failure"); // fails silently
     });
   }
 }

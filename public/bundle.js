@@ -20412,7 +20412,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var helpers = __webpack_require__(189);
+	var helpers = __webpack_require__(170);
 
 	var Form = function (_React$Component) {
 	  _inherits(Form, _React$Component);
@@ -20469,22 +20469,44 @@
 /* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(171);
+	'use strict';
+
+	var axios = __webpack_require__(171);
+
+	var helpers = {
+	  sendMsg: function sendMsg(message) {
+	    axios.post('/msg', {
+	      msg: message
+	    }).then(function (response) {
+	      console.log("success");
+	    }).catch(function (response) {
+	      // console.log("failure"); // fails silently
+	    });
+	  }
+	};
+
+	module.exports = helpers;
 
 /***/ },
 /* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__(172);
+
+/***/ },
+/* 172 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
-	var defaults = __webpack_require__(172);
-	var utils = __webpack_require__(173);
-	var dispatchRequest = __webpack_require__(175);
-	var InterceptorManager = __webpack_require__(184);
-	var isAbsoluteURL = __webpack_require__(185);
-	var combineURLs = __webpack_require__(186);
-	var bind = __webpack_require__(187);
-	var transformData = __webpack_require__(179);
+	var defaults = __webpack_require__(173);
+	var utils = __webpack_require__(174);
+	var dispatchRequest = __webpack_require__(176);
+	var InterceptorManager = __webpack_require__(185);
+	var isAbsoluteURL = __webpack_require__(186);
+	var combineURLs = __webpack_require__(187);
+	var bind = __webpack_require__(188);
+	var transformData = __webpack_require__(180);
 
 	function Axios(defaultConfig) {
 	  this.defaults = utils.merge({}, defaultConfig);
@@ -20573,7 +20595,7 @@
 	axios.all = function all(promises) {
 	  return Promise.all(promises);
 	};
-	axios.spread = __webpack_require__(188);
+	axios.spread = __webpack_require__(189);
 
 	// Provide aliases for supported request methods
 	utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
@@ -20601,13 +20623,13 @@
 
 
 /***/ },
-/* 172 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(173);
-	var normalizeHeaderName = __webpack_require__(174);
+	var utils = __webpack_require__(174);
+	var normalizeHeaderName = __webpack_require__(175);
 
 	var PROTECTION_PREFIX = /^\)\]\}',?\n/;
 	var DEFAULT_CONTENT_TYPE = {
@@ -20679,7 +20701,7 @@
 
 
 /***/ },
-/* 173 */
+/* 174 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -20962,12 +20984,12 @@
 
 
 /***/ },
-/* 174 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(173);
+	var utils = __webpack_require__(174);
 
 	module.exports = function normalizeHeaderName(headers, normalizedName) {
 	  utils.forEach(headers, function processHeader(value, name) {
@@ -20980,7 +21002,7 @@
 
 
 /***/ },
-/* 175 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -21002,10 +21024,10 @@
 	        adapter = config.adapter;
 	      } else if (typeof XMLHttpRequest !== 'undefined') {
 	        // For browsers use XHR adapter
-	        adapter = __webpack_require__(176);
+	        adapter = __webpack_require__(177);
 	      } else if (typeof process !== 'undefined') {
 	        // For node use HTTP adapter
-	        adapter = __webpack_require__(176);
+	        adapter = __webpack_require__(177);
 	      }
 
 	      if (typeof adapter === 'function') {
@@ -21021,18 +21043,18 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 176 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
-	var utils = __webpack_require__(173);
-	var buildURL = __webpack_require__(177);
-	var parseHeaders = __webpack_require__(178);
-	var transformData = __webpack_require__(179);
-	var isURLSameOrigin = __webpack_require__(180);
-	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(181);
-	var settle = __webpack_require__(182);
+	var utils = __webpack_require__(174);
+	var buildURL = __webpack_require__(178);
+	var parseHeaders = __webpack_require__(179);
+	var transformData = __webpack_require__(180);
+	var isURLSameOrigin = __webpack_require__(181);
+	var btoa = (typeof window !== 'undefined' && window.btoa) || __webpack_require__(182);
+	var settle = __webpack_require__(183);
 
 	module.exports = function xhrAdapter(resolve, reject, config) {
 	  var requestData = config.data;
@@ -21129,7 +21151,7 @@
 	  // This is only done if running in a standard browser environment.
 	  // Specifically not if we're in a web worker, or react-native.
 	  if (utils.isStandardBrowserEnv()) {
-	    var cookies = __webpack_require__(183);
+	    var cookies = __webpack_require__(184);
 
 	    // Add xsrf header
 	    var xsrfValue = config.withCredentials || isURLSameOrigin(config.url) ?
@@ -21190,12 +21212,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 177 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(173);
+	var utils = __webpack_require__(174);
 
 	function encode(val) {
 	  return encodeURIComponent(val).
@@ -21264,12 +21286,12 @@
 
 
 /***/ },
-/* 178 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(173);
+	var utils = __webpack_require__(174);
 
 	/**
 	 * Parse headers into an object
@@ -21307,12 +21329,12 @@
 
 
 /***/ },
-/* 179 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(173);
+	var utils = __webpack_require__(174);
 
 	/**
 	 * Transform the data for a request or a response
@@ -21333,12 +21355,12 @@
 
 
 /***/ },
-/* 180 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(173);
+	var utils = __webpack_require__(174);
 
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -21407,7 +21429,7 @@
 
 
 /***/ },
-/* 181 */
+/* 182 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -21449,7 +21471,7 @@
 
 
 /***/ },
-/* 182 */
+/* 183 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -21473,12 +21495,12 @@
 
 
 /***/ },
-/* 183 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(173);
+	var utils = __webpack_require__(174);
 
 	module.exports = (
 	  utils.isStandardBrowserEnv() ?
@@ -21532,12 +21554,12 @@
 
 
 /***/ },
-/* 184 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var utils = __webpack_require__(173);
+	var utils = __webpack_require__(174);
 
 	function InterceptorManager() {
 	  this.handlers = [];
@@ -21590,7 +21612,7 @@
 
 
 /***/ },
-/* 185 */
+/* 186 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -21610,7 +21632,7 @@
 
 
 /***/ },
-/* 186 */
+/* 187 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -21628,7 +21650,7 @@
 
 
 /***/ },
-/* 187 */
+/* 188 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -21645,7 +21667,7 @@
 
 
 /***/ },
-/* 188 */
+/* 189 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -21676,28 +21698,6 @@
 	  };
 	};
 
-
-/***/ },
-/* 189 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var axios = __webpack_require__(170);
-
-	var helpers = {
-	  sendMsg: function sendMsg(message) {
-	    axios.post('/msg', {
-	      msg: message
-	    }).then(function (response) {
-	      console.log(response);
-	    }).catch(function (response) {
-	      console.log(response);
-	    });
-	  }
-	};
-
-	module.exports = helpers;
 
 /***/ }
 /******/ ]);

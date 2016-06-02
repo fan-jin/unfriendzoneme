@@ -13,7 +13,7 @@ class Form extends React.Component {
   render () {
     return (
       <form onSubmit={this.submit.bind(this)}>
-        <div className="form-group">
+        <div className="form-group text-center">
           <textarea
             name="msg"
             type="text"
@@ -25,8 +25,8 @@ class Form extends React.Component {
             required
             autofocus/>
         </div>
-        <div className="form-group">
-          <button type="submit">Submit</button>
+        <div className="form-group text-center">
+          <button className="btn btn-default" type="submit">Submit</button>
         </div>
       </form>
     );

@@ -20431,7 +20431,7 @@
 	        { onSubmit: this.submit.bind(this) },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'form-group' },
+	          { className: 'form-group text-center' },
 	          _react2.default.createElement('textarea', {
 	            name: 'msg',
 	            type: 'text',
@@ -20445,10 +20445,10 @@
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'form-group' },
+	          { className: 'form-group text-center' },
 	          _react2.default.createElement(
 	            'button',
-	            { type: 'submit' },
+	            { className: 'btn btn-default', type: 'submit' },
 	            'Submit'
 	          )
 	        )

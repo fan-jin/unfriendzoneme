@@ -17,6 +17,15 @@ class Form extends React.Component {
   render () {
     return (
       <form onSubmit={this.submit.bind(this)}>
+        <div className="form-group text-left">
+          <input
+            type="email"
+            onChange={this.updateEmail}
+            placeholder="email@example.com"
+            value={this.state.email}
+            required
+            ></input>
+        </div>
         <div className="form-group text-center">
           <textarea
             name="msg"
@@ -28,15 +37,6 @@ class Form extends React.Component {
             onChange={this.updateMessage}
             required
             autofocus/>
-        </div>
-        <div className="form-group text-center">
-          <input
-            type="email"
-            onChange={this.updateEmail}
-            placeholder="email@example.com"
-            value={this.state.email}
-            required
-            ></input>
         </div>
         <div className="form-group text-center">
           <button className="" type="submit">Send</button>

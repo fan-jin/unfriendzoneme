@@ -20437,6 +20437,17 @@
 	        { onSubmit: this.submit.bind(this) },
 	        _react2.default.createElement(
 	          'div',
+	          { className: 'form-group text-left' },
+	          _react2.default.createElement('input', {
+	            type: 'email',
+	            onChange: this.updateEmail,
+	            placeholder: 'email@example.com',
+	            value: this.state.email,
+	            required: true
+	          })
+	        ),
+	        _react2.default.createElement(
+	          'div',
 	          { className: 'form-group text-center' },
 	          _react2.default.createElement('textarea', {
 	            name: 'msg',
@@ -20448,17 +20459,6 @@
 	            onChange: this.updateMessage,
 	            required: true,
 	            autofocus: true })
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'form-group text-center' },
-	          _react2.default.createElement('input', {
-	            type: 'email',
-	            onChange: this.updateEmail,
-	            placeholder: 'email@example.com',
-	            value: this.state.email,
-	            required: true
-	          })
 	        ),
 	        _react2.default.createElement(
 	          'div',

@@ -1,4 +1,5 @@
 import React from 'react';
+var helpers = require('../utils/helpers');
 
 class Form extends React.Component {
   constructor(){
@@ -11,8 +12,10 @@ class Form extends React.Component {
   }
   render () {
     return (
-      <form>
-        <textarea type="text"
+      <form onSubmit={this.submit.bind(this)}>
+        <textarea
+          name="msg"
+          type="text"
           rows="4"
           cols="50"
           placeholder="Tell me your story..."
@@ -23,6 +26,11 @@ class Form extends React.Component {
         <input type="submit"/>
       </form>
     );
+  }
+  submit(e) {
+    e.preventDefault();
+    var msg = this.state.value;
+    helpers.sendMsg(msg);
   }
 }
 

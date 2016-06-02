@@ -92,10 +92,8 @@ body {
 header {
   color: white;
   position: absolute;
-  top: 50%;
   left: 0;
   right: 0;
-  color: #FFF;
   text-align: center;
 }
 
@@ -104,4 +102,11 @@ textarea {
   font-size: 18px;
   background: transparent;
   overflow: hidden;
+}
+
+#story-form button[type="submit"] {
+  font-size: 20px;
+  width: 120px;
+  color: white;
+  background: transparent;
 }

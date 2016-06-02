@@ -25,7 +25,7 @@ class Form extends React.Component {
             required
             autofocus/>
         </div>
-        <div className="form-group text-right">
+        <div className="form-group text-center">
           <button className="btn btn-default" type="submit">Send</button>
         </div>
       </form>

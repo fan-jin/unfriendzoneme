@@ -1,9 +1,10 @@
 var axios = require('axios');
 
 var helpers = {
-  sendMsg: function(message) {
+  sendMsg: function(message, email) {
     axios.post('/msg',  {
-      msg: message
+      msg: message,
+      email: email
     })
     .then(function (response) {
       console.log("success");

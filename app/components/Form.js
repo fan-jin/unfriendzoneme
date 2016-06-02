@@ -4,11 +4,15 @@ var helpers = require('../utils/helpers');
 class Form extends React.Component {
   constructor(){
     super();
-    this.update = this.update.bind(this);
-    this.state = { value: "" };
+    this.updateMessage = this.updateMessage.bind(this);
+    this.updateEmail = this.updateEmail.bind(this);
+    this.state = { value: "", email: "" };
   }
-  update(e) {
+  updateMessage(e) {
     this.setState({ value: e.target.value });
+  }
+  updateEmail(e) {
+    this.setState({ email: e.target.value });
   }
   render () {
     return (
@@ -21,9 +25,18 @@ class Form extends React.Component {
             cols="50"
             placeholder="Tell me your story..."
             value={this.state.value}
-            onChange={this.update}
+            onChange={this.updateMessage}
             required
             autofocus/>
+        </div>
+        <div className="form-group text-center">
+          <input
+            type="email"
+            onChange={this.updateEmail}
+            placeholder="email@example.com"
+            value={this.state.email}
+            required
+            ></input>
         </div>
         <div className="form-group text-center">
           <button className="" type="submit">Send</button>
@@ -34,8 +47,9 @@ class Form extends React.Component {
   submit(e) {
     e.preventDefault();
     var msg = this.state.value;
-    helpers.sendMsg(msg);
-    this.setState({value: ""});
+    var email = this.state.email;
+    helpers.sendMsg(msg, email);
+    this.setState({value: "", email: ""});
   }
 }
 

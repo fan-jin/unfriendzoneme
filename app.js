@@ -15,15 +15,16 @@ app.use(bodyParser.json())
 
 app.post('/msg', function(req, res){
   var msg = req.body.msg; // the user's message
-  console.log(msg); // log the msg to debug
-  res.sendStatus(200) // default success status
+  var email = req.body.email // user's email
+  console.log(email + ":" + msg); // log the msg to debug
+  res.sendStatus(200); // default success status
   // setup e-mail data with unicode symbols
   var mailOptions = {
-      from: '"Fred Foo 👥" <unfriendzoneme@gmail.com>', // sender address
+      from: email, // sender address
       to: 'unfriendzoneme@gmail.com', // list of receivers
       subject: 'I need advice', // Subject line
-      text: msg, // plaintext body
-      html: msg // html body
+      text: 'from:' + email + "\n\n" + msg, // plaintext body
+      html: 'from:' + email + "\n\n" + msg // html body
   };
   // send mail with defined transport object
   transporter.sendMail(mailOptions, function(error, info){

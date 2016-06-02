@@ -20413,15 +20413,21 @@
 
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Form).call(this));
 
-	    _this.update = _this.update.bind(_this);
-	    _this.state = { value: "" };
+	    _this.updateMessage = _this.updateMessage.bind(_this);
+	    _this.updateEmail = _this.updateEmail.bind(_this);
+	    _this.state = { value: "", email: "" };
 	    return _this;
 	  }
 
 	  _createClass(Form, [{
-	    key: 'update',
-	    value: function update(e) {
+	    key: 'updateMessage',
+	    value: function updateMessage(e) {
 	      this.setState({ value: e.target.value });
+	    }
+	  }, {
+	    key: 'updateEmail',
+	    value: function updateEmail(e) {
+	      this.setState({ email: e.target.value });
 	    }
 	  }, {
 	    key: 'render',
@@ -20439,9 +20445,20 @@
 	            cols: '50',
 	            placeholder: 'Tell me your story...',
 	            value: this.state.value,
-	            onChange: this.update,
+	            onChange: this.updateMessage,
 	            required: true,
 	            autofocus: true })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'form-group text-center' },
+	          _react2.default.createElement('input', {
+	            type: 'email',
+	            onChange: this.updateEmail,
+	            placeholder: 'email@example.com',
+	            value: this.state.email,
+	            required: true
+	          })
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -20459,8 +20476,9 @@
 	    value: function submit(e) {
 	      e.preventDefault();
 	      var msg = this.state.value;
-	      helpers.sendMsg(msg);
-	      this.setState({ value: "" });
+	      var email = this.state.email;
+	      helpers.sendMsg(msg, email);
+	      this.setState({ value: "", email: "" });
 	    }
 	  }]);
 
@@ -20478,9 +20496,10 @@
 	var axios = __webpack_require__(171);
 
 	var helpers = {
-	  sendMsg: function sendMsg(message) {
+	  sendMsg: function sendMsg(message, email) {
 	    axios.post('/msg', {
-	      msg: message
+	      msg: message,
+	      email: email
 	    }).then(function (response) {
 	      console.log("success");
 	    }).catch(function (response) {

@@ -39,7 +39,7 @@ class Form extends React.Component {
             autofocus/>
         </div>
         <div className="form-group text-center">
-          <button className="" type="submit">Send</button>
+          <button className="" type="submit">help</button>
         </div>
       </form>
     );

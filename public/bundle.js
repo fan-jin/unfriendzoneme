@@ -20454,7 +20454,7 @@
 	            type: 'text',
 	            rows: '4',
 	            cols: '50',
-	            placeholder: 'tell me your story...',
+	            placeholder: 'your story...',
 	            value: this.state.value,
 	            onChange: this.updateMessage,
 	            required: true,

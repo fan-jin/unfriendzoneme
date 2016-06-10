@@ -82,7 +82,7 @@ body {
 }
 
 #story-form {
-  margin-top: 120px;
+  margin-top: 150px;
 }
 
 #title-text {
@@ -97,17 +97,36 @@ header {
   text-align: center;
 }
 
+header h1 {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+header p {
+  font-family: 'Handlee', cursive;
+  font-size: 20px;
+}
+
 #logo {
   margin-top: 50px;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
+}
+
+input {
+  font-family: 'Handlee', cursive;
+  border: none;
+  font-size: 18px;
 }
 
 textarea {
   color: white;
   font-size: 18px;
   background: transparent;
+  width: 500px;
   overflow: hidden;
+  border: none;
+  font-family: 'Handlee', cursive;
 }
 
 #story-form button[type="submit"] {

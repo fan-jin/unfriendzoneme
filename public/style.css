@@ -113,12 +113,6 @@ header p {
   height: 150px;
 }
 
-input {
-  font-family: 'Handlee', cursive;
-  border: none;
-  font-size: 18px;
-}
-
 textarea {
   color: white;
   font-size: 18px;
@@ -130,7 +124,10 @@ textarea {
 }
 
 #story-form button[type="submit"] {
-  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  font-size: 35px;
+  border: none;
   width: 120px;
   color: white;
   background: transparent;
@@ -140,5 +137,8 @@ input[type="email"] {
   height: 30px;
   width: 200px;
   color: white;
+  font-family: 'Handlee', cursive;
+  border: none;
+  font-size: 18px;
   background: transparent;
 }

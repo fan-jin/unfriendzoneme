@@ -6,7 +6,7 @@ class Form extends React.Component {
     super();
     this.updateMessage = this.updateMessage.bind(this);
     this.updateEmail = this.updateEmail.bind(this);
-    this.state = { value: "", email: "" };
+    this.state = { value: "", email: "", status: "" };
   }
   updateMessage(e) {
     this.setState({ value: e.target.value });
@@ -40,6 +40,7 @@ class Form extends React.Component {
         </div>
         <div className="form-group text-center">
           <button className="" type="submit">help me</button>
+          <p>{this.state.status}</p>
         </div>
       </form>
     );
@@ -49,7 +50,7 @@ class Form extends React.Component {
     var msg = this.state.value;
     var email = this.state.email;
     helpers.sendMsg(msg, email);
-    this.setState({value: "", email: ""});
+    this.setState({value: "", email: "", status: "(sent)"});
   }
 }
 

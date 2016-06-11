@@ -20415,7 +20415,7 @@
 
 	    _this.updateMessage = _this.updateMessage.bind(_this);
 	    _this.updateEmail = _this.updateEmail.bind(_this);
-	    _this.state = { value: "", email: "" };
+	    _this.state = { value: "", email: "", status: "" };
 	    return _this;
 	  }
 
@@ -20467,6 +20467,11 @@
 	            'button',
 	            { className: '', type: 'submit' },
 	            'help me'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            this.state.status
 	          )
 	        )
 	      );
@@ -20478,7 +20483,7 @@
 	      var msg = this.state.value;
 	      var email = this.state.email;
 	      helpers.sendMsg(msg, email);
-	      this.setState({ value: "", email: "" });
+	      this.setState({ value: "", email: "", status: "(sent)" });
 	    }
 	  }]);
 

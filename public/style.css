@@ -141,6 +141,11 @@ textarea {
   background-color: #4d4d4d;
 }
 
+.form-group p {
+  margin-top: 10px;
+  font-family: 'Handlee', cursive;
+  color: white;
+}
 
 input[type="email"] {
   height: 30px;

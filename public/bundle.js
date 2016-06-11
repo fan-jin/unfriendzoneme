@@ -20437,7 +20437,7 @@
 	        { onSubmit: this.submit.bind(this) },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'form-group text-left' },
+	          { className: 'form-group text-center' },
 	          _react2.default.createElement('input', {
 	            type: 'email',
 	            onChange: this.updateEmail,

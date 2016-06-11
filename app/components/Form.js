@@ -17,7 +17,7 @@ class Form extends React.Component {
   render () {
     return (
       <form onSubmit={this.submit.bind(this)}>
-        <div className="form-group text-left">
+        <div className="form-group text-center">
           <input
             type="email"
             onChange={this.updateEmail}

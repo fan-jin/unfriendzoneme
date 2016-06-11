@@ -121,6 +121,7 @@ textarea {
   overflow: hidden;
   border: none;
   font-family: 'Handlee', cursive;
+  border-radius: 10px;
 }
 
 #story-form button[type="submit"] {
@@ -148,4 +149,5 @@ input[type="email"] {
   border: none;
   font-size: 18px;
   background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
 }
